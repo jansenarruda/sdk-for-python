@@ -92,6 +92,7 @@ class Users(Service):
     def create_sessions(self, email, password):
         """Create User Sessions"""
 
+        params = {}
         params['email'] = email
         params['password'] = password
         path = '/users/sessions'

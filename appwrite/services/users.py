@@ -89,10 +89,11 @@ class Users(Service):
             'content-type': 'application/json',
         }, params)
 
-    def create_sessions(self, user_email, password):
+    def create_sessions(self, email, password):
         """Create User Sessions"""
 
-        params = {user_email, password}
+        params['email'] = email
+        params['password'] = password
         path = '/users/sessions'
 
         return self.client.call('get', path, {

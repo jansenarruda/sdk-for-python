@@ -89,6 +89,17 @@ class Users(Service):
             'content-type': 'application/json',
         }, params)
 
+    def create_sessions(self, user_email, password):
+        """Create User Sessions"""
+
+        params = {user_email, password}
+        path = '/users/sessions'
+
+        return self.client.call('get', path, {
+            'content-type': 'application/json',
+        }, params)
+
+        
     def delete_sessions(self, user_id):
         """Delete User Sessions"""
 
